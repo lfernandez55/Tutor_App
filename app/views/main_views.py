@@ -13,7 +13,7 @@ from app.forms.book_forms import BookForm
 from app.forms.main_forms import UserProfileForm
 
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
-
+import git
 
 # The Home page is accessible to anyone
 @main_blueprint.route('/')
@@ -170,6 +170,17 @@ def tutor_info():
         userArray.append(userObj)
 
     return jsonify(userArray)
+
+# see: https://tinyurl.com/yxs32twz
+@main_blueprint.route('/update_server', methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('/home/stillconnected/flask_project/Tutor_App')
+        origin = repo.remotes.origin
+        origin.pull()
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
 
 # retire this
 @main_blueprint.route('/tutor_info2', methods={'GET'})
