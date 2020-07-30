@@ -13,7 +13,7 @@ from app.forms.book_forms import BookForm
 from app.forms.main_forms import UserProfileForm
 
 main_blueprint = Blueprint('main', __name__, template_folder='templates')
-import git
+# import git (only needed if you redeploy update_server below)
 
 # The Home page is accessible to anyone
 @main_blueprint.route('/')
