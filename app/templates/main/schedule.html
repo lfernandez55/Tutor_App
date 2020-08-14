@@ -87,7 +87,10 @@
     <h2 class="time-slot" style="grid-row: time-1600;">4:00pm</h2>
     <h2 class="time-slot" style="grid-row: time-1630;">4:30pm</h2>
     <h2 class="time-slot" style="grid-row: time-1700;">5:00pm</h2>
-
+    <h2 class="time-slot" style="grid-row: time-1730;">5:30pm</h2>
+    <h2 class="time-slot" style="grid-row: time-1800;">6:00pm</h2>
+    <h2 class="time-slot" style="grid-row: time-1830;">6:30pm</h2>
+    <h2 class="time-slot" style="grid-row: time-1900;">7:00pm</h2>
     <!-- Below models what the Javascript builds: -->
     <!-- 
     <h2 class="day">Monday</h2>
@@ -224,7 +227,7 @@ We hide this button.  But we still click it indirectly when sessions are clicked
             divVar.setAttribute('style', createStyle(slotArray[x]))
 
             divVar.innerHTML = '<h3 class="session-lead"><a href="#">' + slotArray[x].tutor_first_name + " " +
-                slotArray[x].tutor_first_name.charAt(0) + "." + ' </a></h3><span class="session-time">' + slotArray[x]
+                slotArray[x].tutor_last_name.charAt(0) + "." + ' </a></h3><span class="session-time">' + slotArray[x]
                 .time_start.substring(0, 5) + "-" + slotArray[x].time_end.substring(0, 5) + '</span>';
             document.getElementById('schedArea').appendChild(divVar);
              
